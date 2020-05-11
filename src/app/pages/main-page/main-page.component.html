@@ -1,0 +1,177 @@
+<nav class="header-wrapper">
+
+    <div class="logo-wrapper">
+        <img src="assets/images/dancer.svg" class="logo" alt="logo"/>
+    </div>
+    <h1 class="page-title">
+        Dance School Pro
+    </h1>
+
+
+    <div class="contact-info-wrapper">
+        <button class="button-primary" id="call">
+            <span>
+                Заказать звонок
+            </span>
+        </button>
+        <h4 class="phone-number">
+            8 (800) 300-00-00
+        </h4>
+    </div>
+
+</nav>
+
+<section class="main-content" id="firstPart">
+
+    <div class="content-accent">
+        Наши профессиональные хореографы обучат танцам Вас и Вашего ребенка за месяц за счет новой методики обучения
+    </div>
+
+    <div class="description-container">
+        <div class="lesson-image-wrapper">
+            <img src="assets/images/lessons/lessons.jpg" alt="lesson" class="lesson-image"/>
+        </div>
+        <div class="offer-description">
+            <p class="offer">
+                Рядом с домом
+            </p>
+            <p class="offer">
+                Доступные цены
+            </p>
+            <p class="offer">
+                Известные преподаватели
+            </p>
+        </div>
+    </div>
+
+    <div class="main-button-wrapper">
+        <button class="button-secondary" id="trial-lesson" (click)="scrollToSecondPart()">
+            <span>
+                Записаться на пробное занятие
+            </span>
+        </button>
+    </div>
+
+</section>
+
+<section class="form-section-container" id="secondPart">
+    <div class="form-description">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Quam a, scelerisque mauris, urna. Ultrices sed ipsum aliquet lobortis.
+        </p>
+    </div>
+    <div class="form-wrap">
+        <form
+            class="form-content"
+            [formGroup]="trialForm"
+            (ngSubmit)="onSubmit()"
+        >
+            <fieldset name="contactInformation">
+                <legend class="form-legend">Контактная информация</legend>
+                <div class="form-field">
+                    <input
+                        type="email"
+                        maxlength="50"
+                        [formControlName]="'email'"
+                        id="email"
+                        autocomplete="true"
+                        placeholder="Email"
+                        required
+                    >
+                    <label class="field-label" for="email">
+                        Email
+                    </label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="text"
+                        [formControlName]="'firstName'"
+                        id="firstName"
+                        autocomplete="true"
+                        placeholder="Имя"
+                        required
+                    >
+                    <label class="field-label" for="firstName">
+                        Имя
+                    </label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="text"
+                        [formControlName]="'middleName'"
+                        id="middleName"
+                        placeholder="Отчество"
+                    >
+                    <label class="field-label" for="middleName">
+                        Отчество
+                    </label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="text"
+                        [formControlName]="'lastName'"
+                        id="lastName"
+                        minlength="2"
+                        autocomplete="true"
+                        placeholder="Фамилия"
+                        required
+                    >
+                    <label class="field-label" for="lastName">
+                        Фамилия
+                    </label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="tel"
+                        [formControlName]="'phoneNumber'"
+                        id="phoneNumber"
+                        placeholder="Номер телефона"
+                        required
+                    >
+                    <label class="field-label" for="phoneNumber">
+                        Номер телефона
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset name="sendEmailNotification">
+                <div class="form-field checkbox-wrapper">
+                    <input
+                        type="checkbox"
+                        [formControlName]="'sendEmailNotification'"
+                        id="emailNotification"
+                        value="true"
+                    >
+                    <div class="checkbox">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <label class="checkbox-description" for="emailNotification">
+                        Отправить на электронную почту уведомление о записи
+                    </label>
+                </div>
+<!--                <pulsate-checkbox-->
+<!--                    [form]="trialForm"-->
+<!--                    [formControlName]="'sendEmailNotification'"-->
+<!--                    [label]="'Отправить на электронную почту уведомление о записи'"-->
+<!--                >-->
+<!--                </pulsate-checkbox>-->
+            </fieldset>
+            <div class="form-button-wrapper">
+                <button [disabled]="trialForm.invalid" class="button-secondary" type="submit">
+                    <span>
+                        Отправить
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="form-description">
+        <p>
+            Exercitation pariatur amet sit eiusmod mollit ipsum laborum magna quis enim cillum.
+            Anim ut tempor dolore id laborum adipisicing.
+            Cupidatat reprehenderit nostrud elit exercitation occaecat ipsum laborum nulla cillum quis in.
+            Pariatur adipisicing ad mollit voluptate excepteur. Aliqua laborum labore reprehenderit ea.
+            Consectetur ullamco est Lorem minim non qui aliquip.
+        </p>
+    </div>
+</section>

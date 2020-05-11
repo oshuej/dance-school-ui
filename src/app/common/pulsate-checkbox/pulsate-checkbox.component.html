@@ -1,0 +1,16 @@
+<div class="form-field checkbox-wrapper" [formGroup]="form">
+    <input
+        type="checkbox"
+        name="{{formControlName}}"
+        ngDefaultControl
+        [formControlName]="'sendEmailNotification'"
+        id="pulsate-checkbox"
+        value="true"
+    >
+    <div class="checkbox">
+        <i class="fa fa-check"></i>
+    </div>
+    <label class="checkbox-description" for="pulsate-checkbox">
+        {{label}}
+    </label>
+</div>
